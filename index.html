@@ -1,0 +1,398 @@
+<html><head><base href="https://ai-rizz-love.app/"><title>AI Love Sender - Spread the Love!</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFD0FA;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2 {
+    font-size: 8rem;
+    color: #8B008B;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+}
+
+#rizz {
+    font-size: 8rem;
+    color: #8B008B;
+    cursor: pointer;
+    user-select: none;
+}
+
+#heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2.5rem;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.heart:hover {
+    transform: scale(1.5);
+}
+
+#send-button {
+    font-size: 2.5rem;
+    padding: 20px 40px;
+    background-color: #8B008B;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#send-button:hover {
+    background-color: #4B0082;
+}
+
+#play-store-logo {
+    max-width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+p {
+    font-size: 2.5rem;
+    color: #4B0082;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.version-button {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    background-color: #8B008B;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.version-button:hover {
+    background-color: #4B0082;
+}
+
+.version-button i {
+    margin-right: 10px;
+}
+
+.trademark {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    color: #4B0082;
+    text-align: center;
+}
+
+.trademark p {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+}
+
+@media (max-width: 768px) {
+    .button-row {
+        flex-direction: column;
+    }
+}
+
+.web-version-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.web-version-arrow {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.dating-apps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.dating-apps img {
+    width: 100px;
+    height: auto;
+}
+
+spline-viewer {
+    width: 100%;
+    height: 400px;
+    margin-top: 2rem;
+    position: relative;
+}
+
+#pua-faqs {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8B008B;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    z-index: 10;
+    width: 250px;
+    justify-content: center;
+}
+
+#pua-faqs:hover {
+    background-color: #4B0082;
+}
+
+#pua-faqs i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+#title-spline {
+    width: 120%;
+    height: 550px;
+    margin-bottom: 1rem;
+    margin-left: -10%;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #4B0082;
+    margin: 10px 0;
+}
+
+.wingman-text {
+    font-size: 1.8rem;
+    color: #4B0082;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.mobile-title {
+    display: none;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mobile-title h1 {
+    font-size: 4rem;
+    color: #8B008B;
+    margin: 0;
+}
+
+.mobile-title h2 {
+    font-size: 3rem;
+    color: #BA55D3;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    #title-spline {
+        display: none;
+    }
+    .mobile-title {
+        display: block;
+    }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.31/build/spline-viewer.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="mobile-title">
+        <h2>AI.</h2>
+        <h1>PUA</h1>
+    </div>
+    <spline-viewer id="title-spline" url="https://prod.spline.design/UJlDLPX8WGq-LFu8/scene.splinecode"></spline-viewer>
+    <p>Rizz Assistant</p>
+    <div class="button-column">
+        <img id="play-store-logo" src="https://freelogopng.com/images/all_img/1664287128google-play-store-logo-png.png" alt="Google Play Store logo" width="300" height="89">
+        <button id="send-button">Send Hearts</button>
+    </div>
+</div>
+<div id="heart-container"></div>
+
+<div class="web-version-container">
+    <h2>Web Version</h2>
+</div>
+<div class="button-row">
+    <a href="https://websim.ai/c/jcTj91qnpaQitYMhH" class="version-button"><i class="fas fa-theater-masks"></i>Roleplay</a>
+    <a href="https://websim.ai/c/y5wQhpq0AMVwDLq2C" class="version-button"><i class="fas fa-hiking"></i>Adventure</a>
+    <a href="https://websim.ai/c/tLUYGsh8epzshE4q9" class="version-button"><i class="fas fa-robot"></i>Rizz Bot</a>
+    <a href="https://websim.ai/c/licpZcxPvarJi5R2G" class="version-button"><i class="fas fa-question-circle"></i>Rizz Q&amp;As</a>
+    <a href="#" class="version-button"><i class="fas fa-envelope"></i>Love Letter Maker</a>
+    <a href="https://websim.ai/c/mvFJumRE29QVP3cv0" class="version-button"><i class="fas fa-check-circle"></i>Rizz True/False</a>
+</div>
+
+<div style="position: relative;">
+    <spline-viewer url="https://prod.spline.design/eo-2Xj6RYBf6ek4s/scene.splinecode"></spline-viewer>
+    <div id="pua-faqs" class="version-button">
+        <i class="fas fa-info-circle"></i>
+        AI.PUA FAQs
+    </div>
+</div>
+
+<p class="wingman-text">Your go-to wingman for all dating apps!</p>
+
+<div class="dating-apps">
+    <img src="https://datingai.pro/_next/static/media/bumble.28c3ad4f.png" alt="Bumble logo">
+    <img src="https://datingai.pro/_next/static/media/tinder.51123171.png" alt="Tinder logo">
+    <img src="https://datingai.pro/_next/static/media/hinge.68293157.png" alt="Hinge logo">
+    <img src="https://datingai.pro/_next/static/media/badoo.937a7174.png" alt="Badoo logo">
+    <img src="https://datingai.pro/_next/static/media/okcupid.7c27727e.png" alt="OkCupid logo">
+</div>
+
+<div class="trademark">
+    <p>Disclaimer: We are not associated with any of the above brands in any way whatsoever.</p>
+    <div class="divider"></div>
+    <p>Email: ogservice@hotmail.com</p>
+    <p>Phone: 258 823815545</p>
+    <p>© Cometomorrow Studio</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+const heartContainer = document.getElementById('heart-container');
+const sendButton = document.getElementById('send-button');
+const playStoreLogo = document.getElementById('play-store-logo');
+const versionButtons = document.querySelectorAll('.version-button');
+const puaFaqs = document.getElementById('pua-faqs');
+const titleSpline = document.getElementById('title-spline');
+
+function createHeart(x, y) {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '❤️';
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+    heartContainer.appendChild(heart);
+
+    heart.addEventListener('click', () => {
+        anime({
+            targets: heart,
+            scale: [1, 1.5, 1],
+            rotate: '1turn',
+            duration: 1000,
+            easing: 'easeInOutQuad'
+        });
+    });
+
+    anime({
+        targets: heart,
+        translateX: anime.random(-200, 200),
+        translateY: anime.random(-200, 200),
+        scale: [0, 1],
+        opacity: [1, 0],
+        easing: 'easeOutExpo',
+        duration: 3000,
+        complete: () => {
+            heartContainer.removeChild(heart);
+        }
+    });
+}
+
+function createHearts(count) {
+    for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            createHeart(x, y);
+        }, i * 50);
+    }
+}
+
+titleSpline.addEventListener('click', (e) => {
+    for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+            createHeart(e.clientX, e.clientY);
+        }, i * 100);
+    }
+});
+
+sendButton.addEventListener('click', () => createHearts(50));
+playStoreLogo.addEventListener('click', () => createHearts(50));
+
+versionButtons.forEach(button => {
+    button.addEventListener('click', () => createHearts(30));
+});
+
+puaFaqs.addEventListener('click', () => {
+    anime({
+        targets: puaFaqs,
+        scale: [1, 1.1, 1],
+        duration: 300,
+        easing: 'easeInOutQuad'
+    });
+    createHearts(20);
+});
+
+// Create initial hearts
+for (let i = 0; i < 20; i++) {
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    createHeart(x, y);
+}
+</script>
+
+</body></html>
